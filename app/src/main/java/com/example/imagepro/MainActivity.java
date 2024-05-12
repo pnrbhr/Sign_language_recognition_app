@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private Button camera_button;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +37,24 @@ public class MainActivity extends AppCompatActivity {
         // Next tutorial will be about predicting using Interpreter
 
 
-        camera_button=findViewById(R.id.camera_button);
-        camera_button.setOnClickListener(new View.OnClickListener() {
+        btn =findViewById(R.id.recognition);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,CameraActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
+
+        // Learning Button
+        btn = findViewById(R.id.learning);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LearningActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
