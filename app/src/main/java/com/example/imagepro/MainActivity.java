@@ -3,6 +3,7 @@ package com.example.imagepro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,20 +22,13 @@ public class MainActivity extends AppCompatActivity {
             Log.d("MainActivity: ","Opencv failed to load");
         }
     }
-
     private Button camera_button;
-
+    //define new buttpn
+    private Button combine_letter_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-                                                                                
-
-        // select device and run
-        // we successfully loaded model
-        // before next tutorial
-        // as we are going to predict in Camera Activity
-        // Next tutorial will be about predicting using Interpreter
 
 
         camera_button=findViewById(R.id.camera_button);
@@ -45,5 +39,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        combine_letter_button=findViewById(R.id.combine_letter_button);
+        combine_letter_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CombineLettersActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
     }
 }
