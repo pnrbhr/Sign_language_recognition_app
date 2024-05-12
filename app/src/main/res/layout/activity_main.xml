@@ -14,7 +14,7 @@
         android:layout_width="159dp"
         android:layout_height="71dp"
         android:backgroundTint="#7A9EB6"
-        android:text="@string/training"
+        android:text="@string/combine_letters"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

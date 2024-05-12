@@ -9,7 +9,7 @@
     <string name="recognition">TANIMA</string>
 
     // Training
-    <string name="training">ALIŞTIRMA</string>
+    <string name="combine_letters">KELİME YAP</string>
 
     // Speech-To-Text
     <string name="speech_to_text">Speech-To-Text</string>

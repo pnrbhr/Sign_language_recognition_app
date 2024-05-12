@@ -11,8 +11,6 @@ import android.widget.Button;
 
 import org.opencv.android.OpenCVLoader;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
     static {
         if(OpenCVLoader.initDebug()){
@@ -24,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    Button btn;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        btn =findViewById(R.id.recognition);
-        btn.setOnClickListener(new View.OnClickListener() {
+        button =findViewById(R.id.recognition);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,CameraActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
@@ -42,12 +40,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Learning Button
-        btn = findViewById(R.id.learning);
-        btn.setOnClickListener(new View.OnClickListener() {
+        button = findViewById(R.id.learning);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LearningActivity.class);
                 startActivity(intent);
+            }
+        });
+
+
+        button =findViewById(R.id.training);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,CombineLettersActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
 
